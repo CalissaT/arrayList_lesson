@@ -84,7 +84,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -143,7 +143,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Lesson-Purpose-and-Objectives">Lesson Purpose and Objectives<a class="anchor-link" href="#Lesson-Purpose-and-Objectives"> </a></h3><p>Learn about the structure and functions of an arrayList and go over the key College Board concepts for arrayLists</p>
-<p>ArrayLists are only 2.5%-7.5% but have many concepts from other units and are a good data structure to know.</p>
+<p>ArrayLists are only 2.5%-7.5% but have many concepts from other units and are a good data structure to know. Also, the 3rd question of the FRQ is based on ArrayLists</p>
 
 </div>
 </div>
@@ -240,10 +240,247 @@ In dodgeball, the number of people in the game is changing based on who comes in
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="7.2-ArrayList-Methods">7.2 ArrayList Methods<a class="anchor-link" href="#7.2-ArrayList-Methods"> </a></h3>
+<h3 id="7.2-ArrayList-Methods">7.2 ArrayList Methods<a class="anchor-link" href="#7.2-ArrayList-Methods"> </a></h3><p>There are a lot of cool methods that you can use with arrayLists, but here are the ones College Board wants you to know for 7.2:</p>
+<p>size();</p>
+<ul>
+<li>Returns the number of elements in the list</li>
+</ul>
+<p>add(obj);</p>
+<ul>
+<li>Adds element at the end</li>
+</ul>
+<p>add(index, object);</p>
+<ul>
+<li>Adds element at specific index</li>
+</ul>
+<p>remove(index);</p>
+<ul>
+<li>Removes element from specific index</li>
+</ul>
+<p>set(index, object);</p>
+<ul>
+<li>Replaces element at index with new object</li>
+</ul>
+<p>get(index);</p>
+<ul>
+<li>Returns element at index</li>
+</ul>
+
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span> 
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">methodsArrayList</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">dogs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Sparky&quot;</span><span class="p">,</span> <span class="s">&quot;Duke&quot;</span><span class="p">,</span> <span class="s">&quot;Noodle&quot;</span><span class="p">));</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">dogs2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Sparky&quot;</span><span class="p">,</span> <span class="s">&quot;Duke&quot;</span><span class="p">,</span> <span class="s">&quot;Noodle&quot;</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;There are &quot;</span> <span class="o">+</span> <span class="n">dogs</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; in the ArrayList&quot;</span><span class="p">);</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;There are &quot;</span> <span class="o">+</span> <span class="n">dogs2</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; in the ArrayList&quot;</span><span class="p">);</span>
+        
+        <span class="c1">//objects you add must be of the same data type</span>
+        <span class="n">dogs</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Peanut&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;There are now &quot;</span> <span class="o">+</span> <span class="n">dogs</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; dogs in the ArrayList&quot;</span><span class="p">);</span> 
+
+        <span class="n">String</span> <span class="n">myDog</span> <span class="o">=</span> <span class="n">dogs</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;My dog is named &quot;</span> <span class="o">+</span> <span class="n">myDog</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//Note: you don&#39;t need to declare &lt;String&gt; again after new ArrayList</span>
+
+<span class="n">methodsArrayList</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>There are 3 in the ArrayList
+There are 3 in the ArrayList
+There are now 4 dogs in the ArrayList
+My dog is named Noodle
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//Hmmmm... seems suspect</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span> 
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">example</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">questions</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">questions</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="n">questions</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="n">myMethod</span><span class="p">(</span><span class="n">questions</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="p">(</span><span class="n">ArrayList</span> <span class="n">arr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">arr</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span> <span class="c1">//String with boolean??? Uh oh!</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">example</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span> 
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">example</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">questions</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">questions</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+        <span class="n">questions</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="n">myMethod</span><span class="p">(</span><span class="n">questions</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myMethod</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">arr</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span> <span class="c1">//String with boolean??? Uh oh!</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">example</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="c1">//Make sure to specify data type so the compiler is more helpful and it avoids confusion</span>
+<span class="c1">//This also applies for returning and arrayList as well</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            arr.set(0,</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">&#34;Hello&#34;</span><span class="ansi-black-intense-fg ansi-bold">); //String with boolean??? Uh oh!</span>
+<span class="ansi-red-intense-fg ansi-bold">incompatible types: java.lang.String cannot be converted to java.lang.Boolean</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">//Returning an ArrayList</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">ArrayList</span> <span class="nf">methodName</span> <span class="p">(</span><span class="n">ArrayList</span> <span class="n">arr</span><span class="p">){</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// HACK!!!!</span>
+<span class="c1">// Create an arrayList and use one of the cool methods for it</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span> 
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">hack1</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+       
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">hack1</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="7.3-Traversing-ArrayLists">7.3 Traversing ArrayLists<a class="anchor-link" href="#7.3-Traversing-ArrayLists"> </a></h3>
