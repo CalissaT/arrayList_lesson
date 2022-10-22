@@ -3,10 +3,10 @@
     
         "post0": {
             "title": "Array List Lesson",
-            "content": "7.1 Introduction to ArrayList . 7.2 ArrayList Methods . 7.3 Traversing ArrayLists . 7.4 Developing Algorithms Using ArrayLists . 7.5 Searching . 7.6 Sorting . 7.7 Ethical Issues Around Data Collection .",
-            "url": "https://calissat.github.io/arrayList_lesson/java/labs/2022/10/20/arrayList.html",
-            "relUrl": "/java/labs/2022/10/20/arrayList.html",
-            "date": " • Oct 20, 2022"
+            "content": "Lesson Purpose and Objectives . Learn about the structure and functions of an arrayList and go over the key College Board concepts for arrayLists . ArrayLists are only 2.5%-7.5% but have many concepts from other units and are a good data structure to know. . 7.1 Introduction to ArrayList . Arrays ArrayLists . Static (fixed size) | Dynamic (can change size) | . Fundamental java feature | Part of a framework. Someone was nice and designed this with the behind the scenes being arrays | . An object with no methods | A class with many methods | . Not as flexible | Designed to be more flexible | . Can store more primitive data | Not designed to store primitives, they store object references | . | Slightly slower than Arrays | . | Can only be used with an import statement | . Real Life Array Example: You always have to have five players on the court . Real Life ArrayList Example: In dodgeball, the number of people in the game is changing based on who comes in or gets out . Primitive Data Types: . boolean | char | double | int | . Wrapper Class Data Types (Store the primitive values as objects) . Boolean | Character | Double | Integer | . import java.util.ArrayList; //you must import the java.util package // Instantiating: ArrayList&lt;DataType&gt; variableName = new ArrayList&lt;&gt;(n); //DataType must be nonprimitive data type public class introArrayList { public static void main (String[] args) { ArrayList&lt;Integer&gt; e1 = new ArrayList&lt;Integer&gt;(); //empty ArrayList&lt;String&gt; e2 = new ArrayList&lt;String&gt;(5); //5 elements ArrayList&lt;Dogs&gt; e3 = new ArrayList&lt;Dogs&gt;(); //you can store whatever objects you want } } . 7.2 ArrayList Methods . 7.3 Traversing ArrayLists . 7.4 Developing Algorithms Using ArrayLists . 7.5 Searching . 7.6 Sorting . 7.7 Ethical Issues Around Data Collection . Homework .",
+            "url": "https://calissat.github.io/arrayList_lesson/java/labs/2022/10/21/arrayList.html",
+            "relUrl": "/java/labs/2022/10/21/arrayList.html",
+            "date": " • Oct 21, 2022"
         }
         
     
