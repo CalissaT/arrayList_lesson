@@ -11,17 +11,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://calissat.github.io/arrayList_lesson/java/labs/2022/10/24/arrayList.html" />
-<meta property="og:url" content="https://calissat.github.io/arrayList_lesson/java/labs/2022/10/24/arrayList.html" />
+<link rel="canonical" href="https://calissat.github.io/arrayList_lesson/java/labs/2022/10/25/arrayList.html" />
+<meta property="og:url" content="https://calissat.github.io/arrayList_lesson/java/labs/2022/10/25/arrayList.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:image" content="https://calissat.github.io/arrayList_lesson/images/arrayList.jpeg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-24T00:00:00-05:00" />
+<meta property="article:published_time" content="2022-10-25T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://calissat.github.io/arrayList_lesson/images/arrayList.jpeg" />
 <meta property="twitter:title" content="Array List Lesson" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Calissa"},"dateModified":"2022-10-24T00:00:00-05:00","datePublished":"2022-10-24T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Array List Lesson","image":"https://calissat.github.io/arrayList_lesson/images/arrayList.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"https://calissat.github.io/arrayList_lesson/java/labs/2022/10/24/arrayList.html"},"url":"https://calissat.github.io/arrayList_lesson/java/labs/2022/10/24/arrayList.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Calissa"},"dateModified":"2022-10-25T00:00:00-05:00","datePublished":"2022-10-25T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Array List Lesson","image":"https://calissat.github.io/arrayList_lesson/images/arrayList.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"https://calissat.github.io/arrayList_lesson/java/labs/2022/10/25/arrayList.html"},"url":"https://calissat.github.io/arrayList_lesson/java/labs/2022/10/25/arrayList.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/arrayList_lesson/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://calissat.github.io/arrayList_lesson/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/arrayList_lesson/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -76,15 +76,15 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Array List Lesson</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-24T00:00:00-05:00" itemprop="datePublished">
-        Oct 24, 2022
+    <h1 class="post-title p-name" itemprop="name headline">Array List Lesson</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-25T00:00:00-05:00" itemprop="datePublished">
+        Oct 25, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Calissa</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -534,6 +534,56 @@ Normally we would use for loops in order to specify each element. one at a time,
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Important Things to Keep in Mind</p>
+<ul>
+<li>When looking at <strong>int</strong> values, the <em>==</em> operator should be used.</li>
+<li>When searching for a double value, we need to make sure the value is close enough by doing some math.</li>
+<li>Object instances should always use the <strong>.equals(otherThing)</strong> method to check for a match. 
+<div>
+When searching a linear structure we need to send it the structure and what wea re looking for as parameters. A standard for loop with an if block is all we need to search any linear structure.&lt;/li&gt;
+&lt;/ul&gt;
+
+</div>
+&lt;/div&gt;
+&lt;/div&gt;
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">whereIsMyNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">magicNumber</span><span class="p">,</span> <span class="kt">int</span> <span class="o">[]</span> <span class="n">myNumbers</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">myNumbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> <span class="c1">//search through every single spot</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">myNumbers</span><span class="o">[</span><span class="n">index</span><span class="o">]</span> <span class="o">==</span> <span class="n">magicNumber</span><span class="p">)</span> <span class="c1">//do they match? if so return index</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// if searched through every single spot, indicate its not there</span>
+    <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>You shouldn't use the == operator when looking for an object. It will only return true if the variable and the element stored at the index point to the same memory, are aliases of each other.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="7.6-Sorting">7.6 Sorting<a class="anchor-link" href="#7.6-Sorting"> </a></h3>
 </div>
 </div>
@@ -552,8 +602,10 @@ Normally we would use for loops in order to specify each element. one at a time,
 </div>
 </div>
 </div>
-</div>
+&lt;/div&gt;
+ 
 
+</li></ul></div></div></div></div>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
@@ -564,7 +616,7 @@ Normally we would use for loops in order to specify each element. one at a time,
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/arrayList_lesson/java/labs/2022/10/24/arrayList.html" hidden></a>
+</script><a class="u-url" href="/arrayList_lesson/java/labs/2022/10/25/arrayList.html" hidden></a>
 </article>
 
       </div>
