@@ -84,7 +84,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -576,12 +576,43 @@ When searching a linear structure we need to send it the structure and what wea 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>You shouldn't use the == operator when looking for an object. It will only return true if the variable and the element stored at the index point to the same memory, are aliases of each other.</li>
-</ul>
+<li>You shouldn't use the == operator when looking for an object. It will only return true if the variable and the element stored at the index point to the same memory, are aliases of each other.
+<div>
+Here is an example of how you would search for a traditional object:&lt;/li&gt;
+&lt;/ul&gt;
 
 </div>
+&lt;/div&gt;
+&lt;/div&gt;
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">findTheWord</span><span class="p">(</span><span class="n">String</span> <span class="n">searchedPhrase</span><span class="p">,</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span> <span class="n">myBooks</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="n">myBooks</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">index</span><span class="o">++</span><span class="p">)</span> <span class="c1">//search through every book in structure</span>
+        <span class="p">{</span>
+            <span class="n">Book</span> <span class="n">currentBook</span> <span class="o">=</span> <span class="n">myBooks</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">index</span><span class="p">);</span> <span class="c1">//hold current book with current book variable</span>
+            <span class="n">String</span> <span class="n">currentPhrase</span> <span class="o">=</span> <span class="n">currentBook</span><span class="p">.</span><span class="na">getDescription</span><span class="p">();</span> <span class="c1">//get description of current book and store in variable currentPhrase</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">currentPhrase</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">searchedPhrase</span><span class="p">))</span> <span class="c1">//if parameter = current phrase of book looking at - using .equals instead of == operator</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="n">index</span><span class="p">;</span> 
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//if no match found, indicate its not there</span>
+    <span class="p">}</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="7.6-Sorting">7.6 Sorting<a class="anchor-link" href="#7.6-Sorting"> </a></h3>
@@ -605,7 +636,7 @@ When searching a linear structure we need to send it the structure and what wea 
 &lt;/div&gt;
  
 
-</li></ul></div></div></div></div>
+</li></ul></div></div></div></li></ul></div></div></div></div>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
