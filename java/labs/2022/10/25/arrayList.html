@@ -84,7 +84,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -502,8 +502,8 @@ My dog is named Noodle
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Often times we need to find locate data inside linear structures
-Normally we would use for loops in order to specify each element. one at a time, and do not need to track the index after execution.</li>
+<li>Often times we need to locate data inside linear structures.
+Normally we would use for loops in order to specify each element, one at a time, and do not need to track the index after execution.</li>
 </ul>
 
 </div>
@@ -540,7 +540,7 @@ Normally we would use for loops in order to specify each element. one at a time,
 <li>When searching for a double value, we need to make sure the value is close enough by doing some math.</li>
 <li>Object instances should always use the <strong>.equals(otherThing)</strong> method to check for a match. </li>
 </ul>
-<p>When searching a linear structure we need to send it the structure and what wea re looking for as parameters. A standard for loop with an if block is all we need to search any linear structure.</p>
+<p>When searching a linear structure we need to send it the structure and what we are looking for as parameters. A standard for loop with an if block is all we need to search any linear structure.</p>
 
 </div>
 </div>
@@ -617,6 +617,75 @@ Normally we would use for loops in order to specify each element. one at a time,
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Selection sort identifies either the maximum or minimum of the compared values and iterates over the structure checking if the item stored at the index matches the condition, if so, it will swap the value stored at the index and continue.</li>
+<li>The insertion sort is characterized by building a sorted structure as it proceeds. It inserts each value it finds at the appropriate location in the data structure. This is often accomplished by using a while loop as the inner loop.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">outer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">outer</span> <span class="o">&lt;</span> <span class="n">randomList</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">outer</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">DebugDuck</span> <span class="n">tested</span> <span class="o">=</span> <span class="n">randomList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">outer</span><span class="p">);</span> <span class="c1">//extract out a value out of list, passes to outer</span>
+    <span class="kt">int</span> <span class="n">inner</span> <span class="o">=</span> <span class="n">outer</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>      <span class="c1">//goes back and compares to previous</span>
+
+    <span class="k">while</span> <span class="p">(</span> <span class="n">inner</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">tested</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">randomList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">inner</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">)</span> <span class="c1">//checks to see if index is valid</span>
+    <span class="p">{</span>
+        <span class="n">randomList</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">inner</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">randomList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">inner</span><span class="p">));</span> <span class="c1">//move up by one and replace original location</span>
+        <span class="n">inner</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">randomList</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">inner</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tested</span><span class="p">);</span> <span class="c1">//anything taken out would be placed back into structure</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">outerLoop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">outerLoop</span> <span class="o">&lt;</span> <span class="n">myDucks</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">outerLoop</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">minIndex</span> <span class="o">=</span> <span class="n">outerLoop</span><span class="p">;</span>  
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">inner</span> <span class="o">=</span> <span class="n">outerLoop</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">inner</span> <span class="o">&lt;</span> <span class="n">myDucks</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">inner</span><span class="o">++</span><span class="p">)</span> <span class="c1">//checks so it doesn&#39;t go out of bounds and goes up by 1</span>
+        <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="n">myDucks</span><span class="o">[</span><span class="n">inner</span><span class="o">]</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">myDucks</span><span class="o">[</span><span class="n">minIndex</span><span class="o">]</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//if its smaller</span>
+           <span class="p">{</span>
+            <span class="n">minIndex</span> <span class="o">=</span> <span class="n">inner</span><span class="p">;</span>
+           <span class="p">}</span> 
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">minIndex</span> <span class="o">!=</span> <span class="n">outerLoop</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">swapItems</span><span class="p">(</span><span class="n">minIndex</span><span class="p">,</span> <span class="n">outerLoop</span><span class="p">,</span> <span class="n">myDucks</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="7.7-Ethical-Issues-Around-Data-Collection">7.7 Ethical Issues Around Data Collection<a class="anchor-link" href="#7.7-Ethical-Issues-Around-Data-Collection"> </a></h3>
