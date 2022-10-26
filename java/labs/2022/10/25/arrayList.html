@@ -84,7 +84,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      8 min read
     
 </span></p>
 
@@ -529,6 +529,31 @@ Normally we would use for loops in order to specify each element, one at a time,
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">for ( int index = 0; index &lt; </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">items</span><span class="ansi-black-intense-fg ansi-bold">.size(); index++ ){ //forward searching</span>
+<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
+<span class="ansi-red-intense-fg ansi-bold">  symbol:   variable items</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    if ( </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">items</span><span class="ansi-black-intense-fg ansi-bold">.get(index) == num ){</span>
+<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
+<span class="ansi-red-intense-fg ansi-bold">  symbol:   variable items</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    if ( items.get(index) == </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">num</span><span class="ansi-black-intense-fg ansi-bold"> ){</span>
+<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
+<span class="ansi-red-intense-fg ansi-bold">  symbol:   variable num</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -658,6 +683,169 @@ Normally we would use for loops in order to specify each element, one at a time,
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="7.7-Ethical-Issues-Around-Data-Collection">7.7 Ethical Issues Around Data Collection<a class="anchor-link" href="#7.7-Ethical-Issues-Around-Data-Collection"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Safety-with-Data-Collection">Safety with Data Collection<a class="anchor-link" href="#Safety-with-Data-Collection"> </a></h4><p>It is very important to minimize user data collection in our programs. While collecting data in a smaller program may not be a big issue, establishing good practices with data security is always a safer bet when eventually moving to larger projects that manage data.</p>
+<p>Whenever you come across data that you no longer will need, it is a good practice to explicitly remove that data altogether.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">dataRemoval</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// just a scanner object</span>
+        <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+        <span class="c1">// makes an arraylist with some users already in it</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">userList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Kian&quot;</span><span class="p">,</span> <span class="s">&quot;Kiannp44@gmail.com&quot;</span><span class="p">,</span> <span class="s">&quot;Samuel&quot;</span><span class="p">,</span> <span class="s">&quot;samuelwaang@gmail.com&quot;</span><span class="p">,</span> <span class="s">&quot;Calissa&quot;</span><span class="p">,</span> <span class="s">&quot;calissaT@gmail.com&quot;</span><span class="p">));</span>
+
+        <span class="c1">// takes user&#39;s name</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Log in ---&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Please enter your name:&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+        <span class="n">userList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+        <span class="c1">// takes user&#39;s email</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Please enter your email:&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">email</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">email</span><span class="p">);</span>
+        <span class="n">userList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">email</span><span class="p">);</span>
+
+        <span class="c1">// prints all the current users in arraylist</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Current users in databse ---&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">userList</span><span class="p">);</span>
+
+        <span class="c1">// prompt to log out</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Would you like to log out? (y/n)&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">logOut</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">logOut</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// if user logs out, remove their name and email from arraylist</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">logOut</span><span class="p">);</span>
+            <span class="n">userList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+            <span class="n">userList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">email</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="c1">// reprints current users in arraylist</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Current users in database ---&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">userList</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">dataRemoval</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Log in ---
+Please enter your name:
+Evan
+Please enter your email:
+evanjoelsanchez@gmail.com
+
+Current users in databse ---
+[Kian, Kiannp44@gmail.com, Samuel, samuelwaang@gmail.com, Calissa, calissaT@gmail.com, Evan, evanjoelsanchez@gmail.com]
+
+Would you like to log out? (y/n)
+y
+
+Current users in databse ---
+[Kian, Kiannp44@gmail.com, Samuel, samuelwaang@gmail.com, Calissa, calissaT@gmail.com]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Anonymizing-Personal-Data">Anonymizing Personal Data<a class="anchor-link" href="#Anonymizing-Personal-Data"> </a></h4><p>Instead of using names for users, we can use hash codes instead, which means that each user will simply be identified by their hash code.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">hashUsers</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+        <span class="c1">// this .hashCode() method will convert the name to a code which cannot be traced back to that original name</span>
+        <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">name</span><span class="p">.</span><span class="na">hashCode</span><span class="p">();</span>
+        
+        <span class="n">name</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// name is now null, and nobody will ever know the original name I put in</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hash Code: &quot;</span> <span class="o">+</span> <span class="n">id</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">hashUsers</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hash Code: 2172094
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="The-Takeaway">The Takeaway<a class="anchor-link" href="#The-Takeaway"> </a></h4><p>It is important to understand that as a programmer handling user data, it is your responsibility to protect that collected data. The less data you collect, the less you have to safeguard. A compromised database will generally be an expensive lawsuit in a large scale project.</p>
+
 </div>
 </div>
 </div>
